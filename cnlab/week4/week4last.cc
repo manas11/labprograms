@@ -10,23 +10,27 @@ using namespace ns3;
 
 NS_LOG_COMPONENT_DEFINE ("FirstScriptExample");
 
-int
-main (int argc, char *argv[])
+int main (int argc, char *argv[])
 {
   CommandLine cmd;
   cmd.Parse (argc, argv);
 
+  //setting the default packet size and the data rate of the channel
   Config::SetDefault ("ns3::OnOffApplication::PacketSize", UintegerValue (137));
-
-  // ??? try and stick 15kb/s into the data rate
   Config::SetDefault ("ns3::OnOffApplication::DataRate", StringValue ("14kb/s"));
   
+
+  //Set unit of time to ns
   Time::SetResolution (Time::NS);
+
+  //Enabling log
   LogComponentEnable ("OnOffApplication", LOG_LEVEL_INFO);
   LogComponentEnable ("PacketSink", LOG_LEVEL_INFO);
   LogComponentEnable ("UdpEchoClientApplication", LOG_LEVEL_INFO);
   LogComponentEnable ("UdpEchoServerApplication", LOG_LEVEL_INFO);
 
+
+  //create a point to point helper and set the attributes
   PointToPointHelper p2p;
   p2p.SetDeviceAttribute ("DataRate", StringValue ("5Mbps"));
   p2p.SetChannelAttribute ("Delay", StringValue ("10ms"));
@@ -61,6 +65,7 @@ TypeId tcpTid;
       Config::SetDefault ("ns3::TcpL4Protocol::SocketType", TypeIdValue (TypeId::LookupByName (transport_prot)));
 }
 
+  //install tcp/ip internet stack 
   InternetStackHelper internet;
   dumb.InstallStack (internet);
 
@@ -70,6 +75,7 @@ TypeId tcpTid;
   uint16_t port = 50000;
 
 
+  //on off application
   OnOffHelper onOffHelper ("ns3::TcpSocketFactory", Address ());
   onOffHelper.SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
   onOffHelper.SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
@@ -78,6 +84,7 @@ Names::Add ("OnOff-0", dumb.GetLeft(0));
 Names::Add ("OnOff-1", dumb.GetLeft(1));
 Names::Add ("OnOff-2", dumb.GetLeft(2));
 
+  //creating multiple flows
   ApplicationContainer spokeApps;
   for (uint32_t i = 0; i < 3; ++i)
     {
@@ -85,6 +92,8 @@ Names::Add ("OnOff-2", dumb.GetLeft(2));
       onOffHelper.SetAttribute ("Remote", remoteAddress);
       spokeApps.Add (onOffHelper.Install (dumb.GetLeft (i)));
     }
+
+
   spokeApps.Start (Seconds (1.0));
   spokeApps.Stop (Seconds (10.0));
 
@@ -102,26 +111,13 @@ Names::Add ("OnOff-2", dumb.GetLeft(2));
   hubApp2.Stop (Seconds (10.0));
 
 
-/*
-  ApplicationContainer spokeApps;
-  OnOffHelper onOffHelper ("ns3::TcpSocketFactory", Address ());
-  AddressValue remoteAddress (InetSocketAddress (dumb.GetRightIpv4Address (0), port));
-  onOffHelper.SetAttribute ("Remote", remoteAddress);
-  spokeApps.Add(onOffHelper.Install (dumb.GetLeft (0)));
-spokeApps.Start(Seconds (1.0));
-spokeApps.Stop(Seconds (10.0));
-
- PacketSinkHelper packetSinkHelper ("ns3::TcpSocketFactory", InetSocketAddress (Ipv4Address::GetAny (), port));
-  ApplicationContainer hubApp = packetSinkHelper.Install (dumb.GetRight(0));
-  hubApp.Start (Seconds (1.0));
-  hubApp.Stop (Seconds (10.0));*/
-
   UdpEchoServerHelper echoServer (9);
 
   ApplicationContainer serverApps = echoServer.Install (dumb.GetRight(3));
   serverApps.Start (Seconds (1.0));
   serverApps.Stop (Seconds (10.0));
 
+  //Udp Echo Client application 
   UdpEchoClientHelper echoClient (dumb.GetRightIpv4Address (3), 9);
   echoClient.SetAttribute ("MaxPackets", UintegerValue (4));
   echoClient.SetAttribute ("Interval", TimeValue (Seconds (1.0)));
@@ -131,11 +127,13 @@ spokeApps.Stop(Seconds (10.0));
   clientApps.Start (Seconds (2.0));
   clientApps.Stop (Seconds (10.0));
 
+  //Udp Echo server application
   UdpEchoServerHelper echoServer1 (9);
 
   ApplicationContainer serverApps1 = echoServer1.Install (dumb.GetRight(4));
   serverApps1.Start (Seconds (1.0));
   serverApps1.Stop (Seconds (10.0));
+
 
   UdpEchoClientHelper echoClient1 (dumb.GetRightIpv4Address (4), 9);
   echoClient1.SetAttribute ("MaxPackets", UintegerValue (4));
@@ -147,12 +145,18 @@ spokeApps.Stop(Seconds (10.0));
   clientApps1.Stop (Seconds (10.0));
 
 
+  //This will allow packets to flow in the whole topology
   Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
 
+      //enable ascii racing to open Week4Last.tr file in tracemetrics application
       AsciiTraceHelper ascii;
       p2p.EnableAsciiAll (ascii.CreateFileStream ("Week4Last.tr"));
 
+
+  //Run the simulator
   Simulator::Run ();
+
+  //Destroy the simulator
   Simulator::Destroy ();
   return 0;
 }
