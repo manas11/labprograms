@@ -1,0 +1,14 @@
+import socket
+HOST = '127.0.0.1' 
+PORT = 1111
+
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+	s.connect((HOST ,PORT))
+	while True:
+		text = input("client")
+		s.sendall(str.encode(text))
+		data = s.recv(1024)
+		print("Recieved", repr(data))
+	
+
+
