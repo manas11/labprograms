@@ -1,0 +1,102 @@
+Please enter N and B
+1829 13
+Factor Base: [-1, 2, 5, 7, 11, 13]
+The numbers that are nearest to root n: [43, 39, 38, 49, 52, 53]
+The value of a[i] ^ 2 - n: [20, -308, -385, 572, 875, 980]
+
+The Exponent vector of factor base
+[0, 0, 1, 0, 0, 0]
+[1, 0, 0, 1, 1, 0]
+[1, 0, 1, 1, 1, 0]
+[0, 0, 0, 0, 1, 1]
+[0, 0, 1, 1, 0, 0]
+[0, 0, 1, 0, 0, 0]
+
+The Exponent vectors that are chosen, 
+a[i] = 39  a[i]^2-n = -308
+a[i] = 38  a[i]^2-n = -385
+a[i] = 53  a[i]^2-n = 980
+The Factorisation is: 31 * 59
+
+
+---------------------------
+
+Please enter N and B
+772637 13
+Factor Base: [-1, 2]
+The numbers that are nearest to root n: [879, -879]
+The value of a[i] ^ 2 - n: [4, 4]
+
+The Exponent vector of factor base
+[0, 0]
+[0, 0]
+
+The Exponent vectors that are chosen, 
+a[i] = 879  a[i]^2-n = 4
+The Factorisation is: 877 * 881
+
+
+---------------------------
+
+Please enter N and B
+7387 13
+Factor Base: [-1, 2, 3, 7, 13]
+The numbers that are nearest to root n: [86, 87, 77, 95, 74]
+The value of a[i] ^ 2 - n: [9, 182, -1458, 1638, -1911]
+
+The Exponent vector of factor base
+[0, 0, 0, 0, 0]
+[0, 1, 0, 1, 1]
+[1, 1, 0, 0, 0]
+[0, 1, 0, 1, 1]
+[1, 0, 1, 0, 1]
+
+The Exponent vectors that are chosen, 
+a[i] = 86  a[i]^2-n = 9
+The Factorisation is: 83 * 89
+
+---------------------------
+
+Please enter N and B
+5977 13
+Factor Base: [-1, 2, 3, 9, 11, 13]
+The numbers that are nearest to root n: [79, 75, 73, 71, 85, 89]
+The value of a[i] ^ 2 - n: [264, -352, -648, -936, 1248, 1944]
+
+The Exponent vector of factor base
+[0, 1, 1, 0, 1, 0]
+[1, 1, 0, 0, 1, 0]
+[1, 1, 0, 0, 0, 0]
+[1, 1, 0, 0, 0, 1]
+[0, 1, 1, 0, 0, 1]
+[0, 1, 1, 0, 0, 0]
+[[0, 1, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0], [0, 1, 1, 0, 0, 0], [0, 1, 0, 1, 0, 0], [1, 0, 0, 0, 1, 0], [0, 0, 0, 0, 1, 1]]
+
+The Exponent vectors that are chosen, 
+a[i] = 85  a[i]^2-n = 1248
+a[i] = 89  a[i]^2-n = 1944
+The number is prime.
+The Factorisation is 1 * 5977
+
+---------------------------
+
+Please enter N and B
+67591 13
+Factor Base: [-1, 2, 3, 5, 9, 13]
+The numbers that are nearest to root n: [260, 262, 271, 221, 154, 379]
+The value of a[i] ^ 2 - n: [9, 1053, 5850, -18750, -43875, 76050]
+
+The Exponent vector of factor base
+[0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 1]
+[0, 1, 0, 0, 0, 1]
+[1, 1, 1, 1, 0, 0]
+[1, 0, 1, 1, 0, 1]
+[0, 1, 0, 0, 0, 0]
+
+The Exponent vectors that are chosen, 
+a[i] = 260  a[i]^2-n = 9
+The Factorisation is: 257 * 263
+
+---------------------------
+
