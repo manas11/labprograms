@@ -1,0 +1,40 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+
+<nav >
+  <ul class="nav navbar-nav navbar-right">
+    <%= link_to root_path do %>
+      <li>
+        <i class="fa fa-home"></i>
+        <span class="tooltip">Home</span>
+      </li>
+    <% end %>
+
+
+    <% if user_signed_in? %>
+
+
+      <%= link_to(destroy_user_session_path, method: :delete) do %>
+        <li>
+          <i class="fa fa-sign-out"></i>
+          <span class="tooltip">Logout</span>
+        </li>
+
+      <% end %>
+
+
+    <%else%>
+
+      <%= link_to new_user_session_path do %>
+        <li>
+          <i class="fa fa-sign-in"></i>
+          <span class="tooltip">Login</span>
+        </li>
+      <% end %>
+
+    <% end %>
+
+  </ul>
+</nav>
+  </div>
+</header>
