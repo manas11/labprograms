@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0f3b52</color>
+    <color name="colorPrimaryDark">#001529</color>
+    <color name="colorAccent">#40657e</color>
+    <color name="toolbarwhite">#FFFFFF</color>
+    <color name="colorGrey"> #c3c3c3</color>
+    <color name="blueWallet">#41a0f4</color>
+    <color name="skyBlue">#00c5ff</color>
+    <color name="primaryLightColor">#40657e</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="diabledgray">#808080</color>
+</resources>
