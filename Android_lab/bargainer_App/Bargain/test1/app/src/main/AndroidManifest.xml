@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.ayush.finalapp">
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Bargainer"
+        android:roundIcon="@drawable/appicon1"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".nointernet"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".finalpage" />
+        <activity android:name=".RateandReview" />
+        <activity android:name=".ForgotPassword" />
+        <activity
+            android:name=".NegotiatorProfileActivity"
+            android:label="User Profile" /> <!-- <meta-data -->
+        <!-- android:name="com.google.firebase.messaging.default_notification_icon" -->
+        <!-- android:resource="@drawable/appicon1" /> -->
+        <!-- &lt;!&ndash; -->
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming -->
+        <!-- notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <!-- &ndash;&gt; -->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.firebase.messaging.default_notification_color" -->
+        <!-- android:resource="@color/colorAccent" /> -->
+        <activity android:name=".ChatBoxNego" />
+        <activity
+            android:name=".ShopperProfileActivity"
+            android:label="User Profile" />
+        <activity android:name=".ShopperCardDetails" />
+        <activity android:name=".CardDetails" />
+        <activity android:name=".ChatBox" />
+        <activity
+            android:name=".NegotiatorRegistration"
+            android:label="Create your account" />
+        <activity
+            android:name=".NegotiatorForm"
+            android:label="Personal details" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Settings" />
+        <activity
+            android:name=".NegotiatorId"
+            android:label="Upload Profile Photo" />
+        <activity
+            android:name=".Negotiator_final"
+            android:label="Upload an ID" />
+        <activity
+            android:name=".ShopperRegistration"
+            android:label="Registration For Shopper" />
+        <activity
+            android:name=".ShopperForm"
+            android:label="Personal Details" />
+        <activity
+            android:name=".LoginShopper"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".Negotiator_dash"
+            android:label="Bargainer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddMoney"
+            android:label="Add Money " />
+        <activity
+            android:name=".PreviousTransactions"
+            android:label="Previous Transations" />
+        <activity
+            android:name=".WelcomePage"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".QrCode"
+            android:label="QR Scanner"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".VerifyPhoneActivity"
+            android:label="Otp_Verification" />
+        <activity android:name=".amount_payable" />
+        <activity
+            android:name=".ShopperHomepage"
+            android:label="Bargainer"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".SearchDisplay" />
+    </application>
+
+</manifest>
