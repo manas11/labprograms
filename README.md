@@ -1,11 +1,9 @@
-# labprograms
-lab programs collaboration
-this repository deals with the lab programs of various labs
+# Lab Programs and Projects
+Collection of muliple computer science related Lab programs and projects.
 
-NTC number theory and cryptography lab
-SC Soft Computing Lab
-PC parallel computing lab
-CN computer networks lab
-android lab of software engineering
-this file contains bargaining android app apk
-DC data communication lab 
+- NTC number theory and cryptography lab
+- SC Soft Computing Lab
+- PC parallel computing lab
+- CN computer networks lab
+- Android lab of software engineering
+- DC data communication lab 
